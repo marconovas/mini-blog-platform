@@ -1,16 +1,174 @@
-# React + Vite
+# Mini Blog Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full stack blog platform built with React, Node.js, Express, Prisma and PostgreSQL.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# Features
 
-## React Compiler
+- User authentication with JWT
+- User roles (Admin/User)
+- Create, edit and delete posts
+- Protected routes
+- REST API
+- Form validation
+- Prisma ORM integration
+- Responsive frontend
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Frontend
+
+- React
+- React Router
+- Fetch API
+- CSS
+
+## Backend
+
+- Node.js
+- Express
+- Prisma ORM
+- PostgreSQL
+- JWT Authentication
+- bcrypt
+- express-validator
+
+---
+
+# Project Structure
+
+```bash
+mini-blog-platform/
+│
+├── backend/
+│   ├── controllers/
+│   ├── routes/
+│   ├── middleware/
+│   ├── services/
+│   ├── prisma/
+│   └── app.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   ├── services/
+│   │   └── App.jsx
+│
+└── README.md
+```
+
+---
+
+# Installation
+
+## Clone the repository
+
+```bash
+git clone https://github.com/yourusername/mini-blog-platform.git
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file:
+
+```env
+DATABASE_URL="your_database_url"
+JWT_SECRET="your_secret_key"
+```
+
+Run Prisma migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+Start the backend server:
+
+```bash
+npm run dev
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# API Endpoints
+
+## Authentication
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register user |
+| POST | /api/auth/login | Login user |
+
+---
+
+## Posts
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /api/posts | Get all posts |
+| GET | /api/posts/:id | Get single post |
+| POST | /api/posts | Create post |
+| PUT | /api/posts/:id | Update post |
+| DELETE | /api/posts/:id | Delete post |
+
+---
+
+# Future Improvements
+
+- Comments system
+- Likes system
+- User profile page
+- Search functionality
+- Pagination
+- Image uploads
+- Deployment
+
+---
+
+# Screenshots
+
+_To be added..._
+---
+
+# Environment Variables
+
+Backend `.env` example:
+
+```env
+DATABASE_URL=""
+JWT_SECRET=""
+PORT=3000
+```
+
+---
+
+# Author
+
+Developed by Marco Novas.
+
+---
+
+# License
+
+This project is licensed under the MIT License.
