@@ -39,6 +39,7 @@ export default function HeroSection() {
               Create Account
             </Button>
           </div>
+
         </div>
 
       </Container>
