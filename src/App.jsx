@@ -1,14 +1,12 @@
-import { Route, Router, Routes } from "react-router-dom"
-import { Home } from "./pages/Home.jsx";
+import { BrowserRouter } from "react-router-dom"
+import PostRouter from "./router/PostRouter.jsx"
 
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={ <Home /> }/>
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <PostRouter/>
+    </BrowserRouter>
   )
 }
 
