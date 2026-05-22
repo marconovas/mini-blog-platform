@@ -10,6 +10,8 @@
     align-items: center;
 
     padding-top: 80px;
+
+    background-color: var(--bg-dark);
 }
 
 .hero-overlay{
@@ -25,13 +27,14 @@
 
 .hero-content{
     position: relative;
+
     z-index: 2;
 }
 
 .hero-left{
     max-width: 650px;
 
-    color: white;
+    color: var(--text-main);
 }
 
 .hero-left h1{
@@ -42,30 +45,32 @@
     line-height: 0.95;
 
     margin-bottom: 1.5rem;
+
+    text-shadow: 0 0 20px rgba(108,99,255,0.3);
 }
 
 .hero-left p{
     font-size: 1.2rem;
 
-    color: #cfcfcf;
+    color: var(--text-secondary);
 
     margin-bottom: 2rem;
 
     max-width: 500px;
-}
 
-.hero-left h1{
-    text-shadow: 0 0 20px rgba(108,99,255,0.3);
+    line-height: 1.7;
 }
 
 .hero-buttons{
     display: flex;
+
     gap: 1rem;
+
     flex-wrap: wrap;
 }
 
 .hero-accent{
-    color: #6C63FF;
+    color: var(--primary);
 
     text-shadow:
         0 0 10px rgba(108,99,255,0.5),

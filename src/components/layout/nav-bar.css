@@ -4,7 +4,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border-subtle);
 
     padding: 1rem 0;
 
@@ -12,24 +12,25 @@
 }
 
 .navbar-brand{
-    color: white !important;
+    color: var(--text-main) !important;
 
     font-size: 1.4rem;
+
     font-weight: 700;
 }
 
 .nav-link{
     color: rgba(255,255,255,0.8) !important;
 
-    transition: 0.2s;
+    transition: var(--transition);
 }
 
 .nav-link:hover{
-    color: #6C63FF !important;
+    color: var(--primary) !important;
 }
 
 .hero-btn{
-    background-color: #6C63FF !important;
+    background-color: var(--primary) !important;
 
     border: none !important;
 
@@ -39,11 +40,13 @@
 
     font-weight: 600;
 
-    transition: 0.2s;
+    transition: var(--transition);
+
+    color: var(--text-main) !important;
 }
 
 .hero-btn:hover{
-    background-color: #7D75FF !important;
+    background-color: var(--primary-hover) !important;
 
     transform: translateY(-2px);
 }

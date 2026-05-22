@@ -1,8 +1,8 @@
 .features-section {
   background: linear-gradient(
     to bottom,
-    #070B14,
-    #111827
+    var(--bg-dark),
+    var(--bg-secondary)
   );
 
   padding: 5rem 2rem;
@@ -38,11 +38,11 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 14px;
+  border-radius: var(--radius-lg);
 
   background: rgba(108, 99, 255, 0.12);
 
-  color: #6C63FF;
+  color: var(--primary);
 
   font-size: 1.3rem;
 
@@ -52,7 +52,7 @@
     0 0 12px rgba(139, 92, 246, 0.18),
     inset 0 0 12px rgba(108, 99, 255, 0.08);
 
-  transition: 0.3s ease;
+  transition: var(--transition);
 }
 
 .feature-item:hover .icon-box {
@@ -66,7 +66,7 @@
 }
 
 .feature-content h3 {
-  color: #FFFFFF;
+  color: var(--text-main);
 
   font-size: 1.1rem;
 
@@ -76,7 +76,7 @@
 }
 
 .feature-content p {
-  color: #CFCFCF;
+  color: var(--text-secondary);
 
   line-height: 1.7;
 
@@ -84,7 +84,9 @@
 }
 
 @media (max-width: 768px) {
+
   .features-grid {
     grid-template-columns: 1fr;
   }
+
 }
