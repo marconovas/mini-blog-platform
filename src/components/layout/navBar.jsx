@@ -1,0 +1,60 @@
+import { 
+  Button,
+  Container,
+  Nav,
+  Navbar
+} from "react-bootstrap";
+import "./nav-bar.css";
+import { Link } from "react-router-dom";
+
+export default function Navigation() {
+  return (
+    <Navbar
+      expand="lg"
+      fixed="top"
+      className="custom-navbar"
+    >
+      <Container>
+
+        <Navbar.Brand as={Link} to="/">
+          {"</>"} Api-Blog
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="navbar" />
+
+        <Navbar.Collapse id="navbar">
+
+          <Nav className="me-auto" variant="underline">
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+
+            <Nav.Link href="/about">
+              About
+            </Nav.Link>
+
+            <Nav.Link href="/about">
+              Categories
+            </Nav.Link>
+            
+            <Nav.Link href="/about">
+              Contact
+            </Nav.Link>
+          </Nav>
+
+          <div className="d-flex gap-2">
+            <Button variant="outline-light">
+              Log-In
+            </Button>
+
+            <Button className="hero-btn">
+              Sign-Up
+            </Button>
+          </div>
+
+        </Navbar.Collapse>
+
+      </Container>
+    </Navbar>
+  );
+}

@@ -1,0 +1,49 @@
+.custom-navbar{
+    background: rgba(10,10,10,0.35);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    padding: 1rem 0;
+
+    z-index: 1000;
+}
+
+.navbar-brand{
+    color: white !important;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.nav-link{
+    color: rgba(255,255,255,0.8) !important;
+
+    transition: 0.2s;
+}
+
+.nav-link:hover{
+    color: #6C63FF !important;
+}
+
+.hero-btn{
+    background-color: #6C63FF !important;
+
+    border: none !important;
+
+    padding: 0.6rem 1.4rem;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.hero-btn:hover{
+    background-color: #7D75FF !important;
+
+    transform: translateY(-2px);
+}
