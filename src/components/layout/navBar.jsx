@@ -4,7 +4,7 @@ import {
   Nav,
   Navbar
 } from "react-bootstrap";
-import "./nav-bar.css";
+import "./NavBar.css";
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
@@ -33,8 +33,8 @@ export default function Navigation() {
               About
             </Nav.Link>
 
-            <Nav.Link href="/about">
-              Categories
+            <Nav.Link as={Link} to={"/posts"}>
+              Posts
             </Nav.Link>
             
             <Nav.Link href="/about">

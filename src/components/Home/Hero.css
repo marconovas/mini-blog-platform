@@ -1,17 +1,14 @@
-.hero-section{
-    position: relative;
+.hero-section {
+  position: relative;
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  align-items: center;
 
-    display: flex;
-    align-items: center;
+  padding-top: 0; /* importante */
 
-    padding-top: 80px;
-
-    background-color: var(--bg-dark);
+  margin-top: -70px; /* altura del navbar */
 }
 
 .hero-overlay{
