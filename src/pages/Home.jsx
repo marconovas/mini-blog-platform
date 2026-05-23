@@ -5,6 +5,7 @@ import Navigation from "../components/layout/navBar.jsx";
 import { getPosts } from "../services/posts.service.js";
 import PostGrid from "../components/posts/PostGrid.jsx";
 import LoadingSpinner from "../components/ui/LoadingSpinner.jsx";
+import Footer from "../components/layout/Footer.jsx";
 
 function Home () {
 
@@ -42,6 +43,8 @@ function Home () {
                     <FeatureSection/>
                         
                     <PostGrid posts={posts} />
+
+                    <Footer />
                 </>                
             )}
         </>
