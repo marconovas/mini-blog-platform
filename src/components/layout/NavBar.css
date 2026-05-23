@@ -1,14 +1,15 @@
-.custom-navbar{
-    background: rgba(10,10,10,0.35);
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid var(--border-subtle);
-
-    padding: 1rem 0;
-
-    z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .navbar-brand{

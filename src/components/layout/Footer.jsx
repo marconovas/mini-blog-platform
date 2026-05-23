@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 export default function Footer() {
@@ -15,8 +16,8 @@ export default function Footer() {
 
                 <div className="footer-links">
                     {/* CHANGE LINKS */}
-                    <a href="/">Home</a>
-                    <a href="/posts">Posts</a>
+                    <Link to={"/"}>Home</Link>
+                    <Link to={"/posts"}>Posts</Link>
                     <a href="/login">Login</a>
                 </div>
             </div>

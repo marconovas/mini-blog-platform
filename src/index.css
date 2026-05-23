@@ -33,6 +33,8 @@
 }
 
 body{
+  padding-top: 70px; /* ajusta según altura del navbar */
+
   background-color: var(--bg-dark);
 
   color: var(--text-main);
