@@ -6,6 +6,7 @@ import Navigation from "../components/layout/navBar.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import LoadingSpinner from "../components/ui/LoadingSpinner.jsx";
 import PostDetail from "../components/posts/PostDetail.jsx";
+import CommentsSection from "../components/comments/CommentsSection.jsx";
 
 export default function PostDetailPage() {
     const [post, setPost] = useState(null);
@@ -103,6 +104,8 @@ export default function PostDetailPage() {
             <Navigation />
             
             <PostDetail post={post} />
+
+            <CommentsSection comments={post.comments} />
             
             <Footer />
         </>

@@ -79,3 +79,16 @@ export async function deletePost(id) {
 
     return res.json();
 }
+
+//COMMENTS
+export async function commentsbyPost(id) {
+    const res = await fetch(`${API_URL}`/`${id}/comments`);
+
+    if(!res.ok){
+        const errorData = res.json();
+
+        throw new Error(errorData.message);
+    }
+
+    return res.json();
+}

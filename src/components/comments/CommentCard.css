@@ -1,0 +1,52 @@
+.comment-card {
+  background: var(--bg-secondary);
+
+  border: 1px solid var(--border-subtle);
+
+  border-radius: var(--radius-lg);
+
+  padding: 1.5rem;
+
+  transition: var(--transition);
+}
+
+.comment-card:hover {
+  border-color: rgba(108, 99, 255, 0.2);
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.08);
+}
+
+.comment-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.comment-header h4 {
+  color: var(--text-main);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+}
+
+.comment-header span {
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+}
+
+.comment-content {
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+
+  font-size: 0.97rem;
+}
