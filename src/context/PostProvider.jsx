@@ -18,8 +18,13 @@ export function PostsProvider({ children }) {
 
     }, []);
 
+
     return(
-        <PostsContext.Provider value={{ posts, setPosts, loading }}>
+        <PostsContext.Provider value={{ 
+            posts, 
+            setPosts, 
+            loading 
+        }}>
             {children}
         </PostsContext.Provider>
     );

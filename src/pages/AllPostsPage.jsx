@@ -4,7 +4,7 @@ import NavBar from "../components/layout/NavBar.jsx";
 import { usePosts } from "../context/PostContext.jsx";
 import Footer from "../components/layout/Footer.jsx";
 
-export default function AllPosts() {
+export default function AllPostsPage() {
     const { posts } = usePosts();
 
     return(

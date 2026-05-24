@@ -6,7 +6,7 @@ import LoadingSpinner from "../components/ui/LoadingSpinner.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import { usePosts } from "../context/PostContext.jsx";
 
-function Home () {
+function HomePage () {
 
     const {posts, loading} = usePosts();
     
@@ -31,4 +31,4 @@ function Home () {
     )
 }
 
-export default Home;
+export default HomePage;
