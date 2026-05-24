@@ -1,6 +1,7 @@
 import { Button, Container } from "react-bootstrap";
 import HeroBg from "../../assets/hero-image.png";
 import "./Hero.css";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -31,9 +32,9 @@ export default function HeroSection() {
           </p>
 
           <div className="hero-buttons">
-            <Button className="hero-btn">
+            <Link to={"/posts"} className="hero-btn">
               Explore Posts 
-            </Button>
+            </Link>
 
             <Button variant="outline-light">
               Create Account
