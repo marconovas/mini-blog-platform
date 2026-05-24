@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getPostById } from "../services/posts.service.js"
 import { useParams } from "react-router-dom";
 
-import Navigation from "../components/layout/navBar.jsx";
+import Navigation from "../components/layout/Navigation.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import LoadingSpinner from "../components/ui/LoadingSpinner.jsx";
 import PostDetail from "../components/posts/PostDetail.jsx";

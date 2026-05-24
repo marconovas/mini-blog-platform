@@ -1,13 +1,28 @@
 import "./PostHeader.css";
 
-export default function PostsHeader() {
+export default function PostsHeader({
+    label,
+    title,
+    description
+}) {
     return(
+
         <header className="posts-header">
-            <h1>All Posts</h1>
+            
+            {label && (
+                <span className="post-header-label">
+                    {label}
+                </span>
+            )}
+
+            <h1>
+                {title}
+            </h1>
 
             <p>
-                Explore ideas, tutorials and thoughts about development.
+                {description}
             </p>
+
         </header>
     )
 }

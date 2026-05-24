@@ -1,0 +1,126 @@
+.post-form {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 3rem;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 24, 39, 0.96),
+    rgba(7, 11, 20, 0.98)
+  );
+
+  border: 1px solid var(--border-subtle);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+}
+
+.form-group label {
+  color: var(--text-main);
+
+  font-weight: 600;
+
+  font-size: 0.95rem;
+
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: var(--radius-md);
+
+  padding: 1rem 1.2rem;
+
+  color: var(--text-main);
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(108,99,255,0.45);
+
+  box-shadow:
+    0 0 0 4px rgba(108,99,255,0.08);
+}
+
+.form-group textarea {
+  min-height: 220px;
+
+  resize: vertical;
+
+  line-height: 1.8;
+}
+
+.publish-btn {
+  align-self: flex-start;
+
+  background: var(--primary);
+
+  color: var(--text-main);
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  padding: 0.9rem 1.8rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 0 18px rgba(108,99,255,0.18);
+}
+
+.publish-btn:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 24px rgba(108,99,255,0.28);
+}
+
+@media (max-width: 768px) {
+
+  .post-form {
+    padding: 2rem 1.5rem;
+  }
+
+}

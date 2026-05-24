@@ -10,7 +10,7 @@ export default function Footer() {
 
                     <p>
                         Share ideas, code and inspiration
-                        with developers around the world.
+                        with people around the world.
                     </p>
                 </div>
 
