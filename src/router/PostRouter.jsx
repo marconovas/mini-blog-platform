@@ -1,13 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 
-import Home from "../pages/Home.jsx";
-import AllPosts from "../pages/AllPosts.jsx";
+import HomePage from "../pages/HomePage.jsx";
+import AllPostsPage from "../pages/AllPostsPage.jsx";
+import PostDetailPage from "../pages/PostDetailPage.jsx";
 
 function PostRouter () {
     return(
         <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/posts" element={<AllPosts/>}/>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/posts" element={<AllPostsPage />}/>
+            <Route path="/posts/:id" element={<PostDetailPage />}/>
         </Routes>
     )
 }

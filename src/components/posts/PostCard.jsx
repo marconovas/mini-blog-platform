@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./PostCard.css";
 
 export default function PostCard({ post }) {
@@ -14,15 +15,18 @@ export default function PostCard({ post }) {
       </h3>
 
       <p className="post-description">
-        {post.content}
+        {post.content.slice(0, 30)}
       </p>
 
       <div className="post-footer">
-        <span>{post.updatedAt}</span>
+        <span>{new Date(post.updatedAt).toTimeString()}</span>
 
-        <button className="read-more-btn">
+        <Link 
+          to={`/posts/${post.id}`}
+          className="read-more-btn"
+        >
           Read More →
-        </button>
+        </Link>
       </div>
 
     </article>

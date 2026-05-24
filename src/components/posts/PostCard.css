@@ -72,6 +72,8 @@
 }
 
 .read-more-btn {
+  display: inline-block;
+  
   background: transparent;
 
   border: none;
