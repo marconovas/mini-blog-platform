@@ -8,11 +8,14 @@ import { createPost } from "../services/posts.service";
 import PostForm from "../components/posts/PostForm.jsx";
 
 import PostsHeader from "../components/posts/PostHeader.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePostPage() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+
+    const navigate = useNavigate();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -24,6 +27,7 @@ export default function CreatePostPage() {
 
             console.log("Post Created.");
 
+            navigate("/posts");
         } catch(error) {
             console.error(error.message);
         }
