@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage.jsx";
 import AllPostsPage from "../pages/AllPostsPage.jsx";
 import PostDetailPage from "../pages/PostDetailPage.jsx";
 import CreatePostPage from "../pages/CreatePostPage.jsx";
+import EditPostPage from "../pages/EditPostPage.jsx";
 
 function PostRouter () {
     return(
@@ -12,6 +13,7 @@ function PostRouter () {
             <Route path="/posts" element={<AllPostsPage />}/>
             <Route path="/posts/:id" element={<PostDetailPage />}/>
             <Route path="/posts/create" element={<CreatePostPage />}/>
+            <Route path="/posts/:id/modify" element={<EditPostPage/>}/>
         </Routes>
     )
 }
