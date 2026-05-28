@@ -1,6 +1,6 @@
-import "./PostHeader.css";
+import "./PageHeader.css";
 
-export default function PostsHeader({
+export default function PageHeader({
     label,
     title,
     description

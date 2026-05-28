@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import Footer from "../components/layout/Footer"
 import Navigation from "../components/layout/Navigation"
 import PostForm from "../components/posts/PostForm"
-import PostsHeader from "../components/posts/PostHeader";
 import { editPost, getPostById } from "../services/posts.service";
 import { useNavigate, useParams } from "react-router-dom";
+import PageHeader from "../components/layout/PageHeader";
 
 
 export default function EditPostPage() {
@@ -53,7 +53,7 @@ export default function EditPostPage() {
         <>
             <Navigation />
 
-            <PostsHeader
+            <PageHeader
                 title="Edit Post"
                 description="Modify your post and don't forget to save all the changes!"
             />

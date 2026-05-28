@@ -52,3 +52,36 @@ a {
 button {
   font-family: inherit;
 }
+
+.form-error {
+  padding: 0.9rem 1rem;
+
+  border-radius: var(--radius-md);
+
+  background: rgba(255, 77, 77, 0.08);
+
+  border: 1px solid rgba(255, 77, 77, 0.18);
+
+  color: #ff8a8a;
+
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+  
+  animation: fadeIn 0.25s ease;
+  
+  box-shadow:
+    0 0 12px rgba(255, 77, 77, 0.08);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

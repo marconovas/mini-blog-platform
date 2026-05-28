@@ -47,7 +47,11 @@ export default function Navigation() {
               Log-In
             </Button>
 
-            <Button className="hero-btn">
+            <Button 
+              className="hero-btn"
+              as={Link}
+              to={"/register"}
+            >
               Sign-Up
             </Button>
           </div>

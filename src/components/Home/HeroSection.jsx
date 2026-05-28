@@ -36,7 +36,11 @@ export default function HeroSection() {
               Explore Posts 
             </Link>
 
-            <Button variant="outline-light">
+            <Button 
+              as={Link}
+              to={"/register"}
+              variant="outline-light"
+            >
               Create Account
             </Button>
           </div>

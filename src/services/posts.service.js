@@ -4,23 +4,25 @@ const API_URL = "http://localhost:3000/posts";
 export async function getPosts() {
     const res = await fetch(API_URL);
 
+    const data = await res.json();
+    
     if(!res.ok){
-        throw new Error(res.message);
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
 
 export async function getPostById (id) {
     const res = await fetch(`${API_URL}/${id}`);
 
-    if(!res.ok){
-        const errorData = await res.json();
+    const data = await res.json();
 
-        throw new Error(errorData.message);
+    if(!res.ok){
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
 
 export async function createPost(title, content) {
@@ -36,20 +38,20 @@ export async function createPost(title, content) {
         })
     });
 
-    if(!res.ok){
-        const errorData = await res.json();
+    const data = await res.json();
 
-        throw new Error(errorData.message);
+    if(!res.ok){
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
 
 export async function editPost(id, title, content) {
     const res  = await fetch(`${API_URL}/${id}`,{
         method: "PUT",
         headers: {
-            "Content-type" : "application/json"
+            "Content-Type" : "application/json"
         },
         body: JSON.stringify({
             title,
@@ -57,13 +59,13 @@ export async function editPost(id, title, content) {
         })
     })
 
-    if(!res.ok){
-        const errorData = await res.json();
+    const data = await res.json();
 
-        throw new Error(errorData.message);
+    if(!res.ok){
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
 
 export async function deletePost(id) {
@@ -71,24 +73,24 @@ export async function deletePost(id) {
         method: "DELETE"
     })
 
-    if(!res.ok){
-        const errorData = await res.json();
+    const data = await res.json();
 
-        throw new Error(errorData.message);
+    if(!res.ok){
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
 
 //COMMENTS
-export async function commentsbyPost(id) {
-    const res = await fetch(`${API_URL}`/`${id}/comments`);
+export async function commentsByPost(id) {
+    const res = await fetch(`${API_URL}/${id}/comments`);
+
+    const data = await res.json();
 
     if(!res.ok){
-        const errorData = res.json();
-
-        throw new Error(errorData.message);
+        throw new Error(data.message);
     }
 
-    return res.json();
+    return data;
 }
