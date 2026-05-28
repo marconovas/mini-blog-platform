@@ -7,8 +7,8 @@ import { createPost } from "../services/posts.service";
 
 import PostForm from "../components/posts/PostForm.jsx";
 
-import PostsHeader from "../components/posts/PostHeader.jsx";
 import { useNavigate } from "react-router-dom";
+import PageHeader from "../components/layout/PageHeader.jsx";
 
 export default function CreatePostPage() {
 
@@ -39,7 +39,7 @@ export default function CreatePostPage() {
 
             <main>
 
-                <PostsHeader 
+                <PageHeader
                     label="New Article"
                     title="Create a New Post"
                     description="Share your ideas, tutorials and thoughts with the community."

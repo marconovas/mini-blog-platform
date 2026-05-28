@@ -1,0 +1,119 @@
+.register-form {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  padding: 3rem;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 24, 39, 0.96),
+    rgba(7, 11, 20, 0.98)
+  );
+
+  border: 1px solid var(--border-subtle);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+}
+
+.form-group label {
+  color: var(--text-main);
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+}
+
+.form-group input {
+  width: 100%;
+
+  padding: 1rem 1.1rem;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.03);
+
+  color: var(--text-main);
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: var(--transition);
+}
+
+.form-group input::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.form-group input:focus {
+  border-color: rgba(108,99,255,0.45);
+
+  box-shadow:
+    0 0 0 4px rgba(108,99,255,0.08);
+}
+
+.register-btn {
+  width: 100%;
+
+  margin-top: 0.5rem;
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  padding: 1rem;
+
+  background: var(--primary);
+
+  color: var(--text-main);
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 0 18px rgba(108,99,255,0.18);
+}
+
+.register-btn:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 24px rgba(108,99,255,0.28);
+}
+
+@media (max-width: 768px) {
+
+  .register-form {
+    padding: 2rem 1.5rem;
+  }
+
+}
