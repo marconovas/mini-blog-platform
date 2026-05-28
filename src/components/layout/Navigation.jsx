@@ -43,7 +43,11 @@ export default function Navigation() {
           </Nav>
 
           <div className="d-flex gap-2">
-            <Button variant="outline-light">
+            <Button 
+              as={Link}
+              to={"/login"}
+              variant="outline-light"
+            >
               Log-In
             </Button>
 
