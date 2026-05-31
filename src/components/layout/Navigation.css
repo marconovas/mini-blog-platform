@@ -5,48 +5,189 @@
   z-index: 1000;
 
   background: rgba(10, 10, 10, 0.35);
+
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.navbar-brand{
-    color: var(--text-main) !important;
+/******** BRAND ********/
 
-    font-size: 1.4rem;
+.navbar-brand {
+  color: var(--text-main) !important;
 
-    font-weight: 700;
+  font-size: 1.4rem;
+
+  font-weight: 700;
 }
 
-.nav-link{
-    color: rgba(255,255,255,0.8) !important;
+/******** LINKS ********/
 
-    transition: var(--transition);
+.nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+
+  transition: var(--transition);
 }
 
-.nav-link:hover{
-    color: var(--primary) !important;
+.nav-link:hover {
+  color: var(--primary) !important;
 }
 
-.hero-btn{
-    background-color: var(--primary) !important;
+/******** BUTTONS ********/
 
-    border: none !important;
+.hero-btn {
+  background-color: var(--primary) !important;
 
-    padding: 0.6rem 1.4rem;
+  color: var(--text-main) !important;
 
-    border-radius: 10px;
+  border: none !important;
 
-    font-weight: 600;
+  padding: 0.6rem 1.4rem;
 
-    transition: var(--transition);
+  border-radius: 10px;
 
-    color: var(--text-main) !important;
+  font-weight: 600;
+
+  transition: var(--transition);
 }
 
-.hero-btn:hover{
-    background-color: var(--primary-hover) !important;
+.hero-btn:hover {
+  background-color: var(--primary-hover) !important;
 
-    transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+/********************************/
+/******** USER DROPDOWN *********/
+/********************************/
+
+.user-dropdown-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  color: var(--text-main);
+}
+
+/******** TOGGLE ********/
+
+.user-dropdown .dropdown-toggle {
+  display: flex;
+
+  align-items: center;
+
+  color: var(--text-main) !important;
+
+  text-decoration: none !important;
+
+  border: none;
+
+  background: transparent;
+}
+
+.user-dropdown .dropdown-toggle::after {
+  margin-left: 0.75rem;
+
+  vertical-align: middle;
+}
+
+.user-dropdown .dropdown-toggle:focus,
+.user-dropdown .dropdown-toggle:active,
+.user-dropdown .show > .dropdown-toggle {
+  color: var(--text-main) !important;
+
+  box-shadow: none !important;
+
+  background: transparent !important;
+}
+
+/******** AVATAR ********/
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(108, 99, 255, 0.15);
+
+  color: var(--primary);
+
+  font-weight: 700;
+
+  box-shadow:
+    0 0 12px rgba(139, 92, 246, 0.2);
+}
+
+/******** MENU ********/
+
+.user-dropdown .dropdown-menu {
+  background: var(--bg-secondary);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  padding: 0.75rem;
+
+  min-width: 220px;
+
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.12);
+}
+
+/******** ITEMS ********/
+
+.user-dropdown .dropdown-item {
+  color: var(--text-secondary);
+
+  border-radius: 10px;
+
+  padding: 0.7rem 1rem;
+
+  transition: var(--transition);
+}
+
+.user-dropdown .dropdown-item:hover {
+  background: rgba(108, 99, 255, 0.12);
+
+  color: var(--text-main);
+}
+
+/******** USER INFO ********/
+
+.user-dropdown .dropdown-item.disabled {
+  color: var(--text-main);
+
+  opacity: 1;
+
+  font-weight: 600;
+}
+
+/******** DIVIDER ********/
+
+.user-dropdown .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/******** LOGOUT ********/
+
+.logout-item {
+  color: #ff8a8a !important;
+}
+
+.logout-item:hover {
+  background: rgba(255, 77, 77, 0.08) !important;
+
+  color: #ffaaaa !important;
 }
