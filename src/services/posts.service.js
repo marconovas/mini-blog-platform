@@ -1,9 +1,21 @@
-
 const API_URL = "http://localhost:3000/posts";
+
 
 export async function getPosts() {
     const res = await fetch(API_URL);
+    
+    const data = await res.json();
+    
+    if(!res.ok){
+        throw new Error(data.message);
+    }
+    
+    return data;
+}
 
+export async function getPostById (id) {
+    const res = await fetch(`${API_URL}/${id}`);
+    
     const data = await res.json();
     
     if(!res.ok){
@@ -13,24 +25,13 @@ export async function getPosts() {
     return data;
 }
 
-export async function getPostById (id) {
-    const res = await fetch(`${API_URL}/${id}`);
-
-    const data = await res.json();
-
-    if(!res.ok){
-        throw new Error(data.message);
-    }
-
-    return data;
-}
-
-export async function createPost(title, content) {
+export async function createPost(title, content, token) {
 
     const res = await fetch(API_URL,{
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({
             title,
@@ -47,11 +48,12 @@ export async function createPost(title, content) {
     return data;
 }
 
-export async function editPost(id, title, content) {
+export async function editPost(id, title, content, token) {
     const res  = await fetch(`${API_URL}/${id}`,{
         method: "PUT",
         headers: {
-            "Content-Type" : "application/json"
+            "Content-Type" : "application/json",
+            Authorization: `Bearer ${token}`
         },
         body: JSON.stringify({
             title,

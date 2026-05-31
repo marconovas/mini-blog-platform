@@ -14,6 +14,8 @@ export default function AllPostsPage() {
             <PageHeader
                 title="All Posts"
                 description="Explore ideas, tutorials and thoughts about you and others."
+                buttonText="Create a Post"
+                buttonLink={"/posts/create"}
             />
 
             <PostGrid posts={posts}/>

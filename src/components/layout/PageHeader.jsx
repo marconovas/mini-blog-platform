@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./PageHeader.css";
 
 export default function PageHeader({
     label,
     title,
-    description
+    description,
+    buttonText,
+    buttonLink
 }) {
     return(
 
@@ -22,6 +25,15 @@ export default function PageHeader({
             <p>
                 {description}
             </p>
+
+            {buttonText && (
+                <Link
+                    to={buttonLink}
+                    className="header-btn"
+                >
+                    {buttonText}
+                </Link>
+            )}
 
         </header>
     )

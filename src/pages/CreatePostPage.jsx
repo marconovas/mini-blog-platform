@@ -9,13 +9,20 @@ import PostForm from "../components/posts/PostForm.jsx";
 
 import { useNavigate } from "react-router-dom";
 import PageHeader from "../components/layout/PageHeader.jsx";
+import useAuth from "../context/useAuth.js";
+
+import { toast } from "react-toastify";
+import { usePosts } from "../context/PostContext.jsx";
 
 export default function CreatePostPage() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
 
+    const { token } = useAuth();
     const navigate = useNavigate();
+
+    const { setPosts } = usePosts();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -23,9 +30,22 @@ export default function CreatePostPage() {
         console.log(title, content);
 
         try {
-            await createPost(title, content);
+            const newPost = await createPost(title, content, token);
 
-            console.log("Post Created.");
+            console.log(newPost);
+
+            setPosts(prevPosts => [newPost.post, ...prevPosts]);
+
+            toast.success("Post created successfully!",{
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
 
             navigate("/posts");
         } catch(error) {

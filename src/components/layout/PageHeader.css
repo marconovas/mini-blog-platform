@@ -59,3 +59,25 @@
 
   font-size: 1.05rem;
 }
+
+.header-btn{
+  background-color: var(--primary) !important;
+
+  border: none !important;
+
+  padding: 0.6rem 1.4rem;
+
+  border-radius: 10px;
+
+  font-weight: 600;
+
+  transition: var(--transition);
+
+  color: var(--text-main) !important;
+}
+
+.hero-btn:hover{
+  background-color: var(--primary-hover) !important;
+
+  transform: translateY(-2px);
+}
