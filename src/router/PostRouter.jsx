@@ -13,6 +13,8 @@ function PostRouter () {
             <Route path="/" element={<HomePage />}/>
             <Route path="/posts" element={<AllPostsPage />}/>
             <Route path="/posts/:id" element={<PostDetailPage />}/>
+
+            {/* PROTECTED ROUTES */}
             <Route 
                 path="/posts/create" 
                 element={

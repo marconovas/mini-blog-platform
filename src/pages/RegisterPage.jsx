@@ -6,6 +6,8 @@ import Footer from "../components/layout/Footer.jsx";
 import { userRegister } from "../services/auth.service.js";
 import { useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 export default function RegisterPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [name, setName] = useState("");
@@ -25,6 +27,18 @@ export default function RegisterPage() {
             const res = await userRegister(name, email, password);
 
             console.log(res);
+            
+            toast.success("Account created Succesfully!",{
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+
             redirect("/login");
             
         } catch(error) {

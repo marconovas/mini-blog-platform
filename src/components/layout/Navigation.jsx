@@ -5,9 +5,20 @@ import {
   Navbar
 } from "react-bootstrap";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../context/useAuth";
 
 export default function Navigation() {
+  const { token, logout } = useAuth();
+  
+  const navigate = useNavigate();
+  const isAuth = !!token;
+
+  function handleLogout() {
+    logout();
+    navigate("/auth/login");
+  }
+
   return (
     <Navbar
       expand="lg"
@@ -29,36 +40,52 @@ export default function Navigation() {
               Home
             </Nav.Link>
 
-            <Nav.Link href="/about">
+            <Nav.Link as={Link} to={"/about"}>
               About
             </Nav.Link>
 
             <Nav.Link as={Link} to={"/posts"}>
               Posts
             </Nav.Link>
-            
-            <Nav.Link href="/about">
-              Contact
-            </Nav.Link>
           </Nav>
 
-          <div className="d-flex gap-2">
-            <Button 
-              as={Link}
-              to={"/login"}
-              variant="outline-light"
-            >
-              Log-In
-            </Button>
+          {isAuth ? (
+            <div className="d-flex gap-2">
+              <Button
+                as={Link}
+                to={"/posts/create"}
+                className="hero-btn"
+              >
+                New Post
+              </Button>
 
-            <Button 
-              className="hero-btn"
-              as={Link}
-              to={"/register"}
-            >
-              Sign-Up
-            </Button>
-          </div>
+              <Button
+                onClick={handleLogout}
+                variant="outline-light"
+              >
+                Logout
+              </Button>
+            </div>
+          ) : (
+            <div className="d-flex gap-2">
+              <Button 
+                as={Link}
+                to={"/auth/login"}
+                variant="outline-light"
+              >
+                Log-In
+              </Button>
+
+              <Button 
+                className="hero-btn"
+                as={Link}
+                to={"/auth/register"}
+              >
+                Sign-Up
+              </Button>
+            </div>
+          )}
+
 
         </Navbar.Collapse>
 

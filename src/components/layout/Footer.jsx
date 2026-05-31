@@ -15,10 +15,10 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-links">
-                    {/* CHANGE LINKS */}
+                    {/* CHECK LINKS */}
                     <Link to={"/"}>Home</Link>
                     <Link to={"/posts"}>Posts</Link>
-                    <a href="/login">Login</a>
+                    <Link to={"/auth/login"}>Login</Link>
                 </div>
             </div>
 

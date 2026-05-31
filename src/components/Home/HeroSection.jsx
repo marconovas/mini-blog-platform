@@ -38,7 +38,7 @@ export default function HeroSection() {
 
             <Button 
               as={Link}
-              to={"/register"}
+              to={"/auth/register"}
               variant="outline-light"
             >
               Create Account

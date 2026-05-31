@@ -9,6 +9,8 @@ import { userLogIn } from "../services/auth.service.js";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../context/useAuth.js";
 
+import { toast } from "react-toastify";
+
 
 export default function LogInPage() {
     const [email, setEmail] = useState("");
@@ -28,6 +30,17 @@ export default function LogInPage() {
             const data = await userLogIn(email, password);
 
             login(data.token);
+
+            toast.success("Login Successful!",{
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
 
             navigate("/posts");
 
