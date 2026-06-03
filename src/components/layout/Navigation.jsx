@@ -70,6 +70,14 @@ export default function Navigation() {
 
               <NavDropdown.Item disabled>
                 Signed in as {user.name}
+                
+              </NavDropdown.Item>
+              
+              <NavDropdown.Item
+                as={Link}
+                to={`/user/${user.id}`}
+              >
+                Go to Profile
               </NavDropdown.Item>
               
               <NavDropdown.Divider />
