@@ -1,0 +1,81 @@
+.user-info-card {
+  max-width: 900px;
+
+  margin: 2rem auto;
+
+  padding: 2rem;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.08);
+}
+
+.card-header h2 {
+  color: var(--text-main);
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+
+  margin: 0;
+}
+
+.card-divider {
+  height: 1px;
+
+  margin: 1.5rem 0;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.info-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  padding: 1rem 0;
+}
+
+.info-group:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-label {
+  color: var(--primary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.info-value {
+  color: var(--text-main);
+
+  margin: 0;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+.info-group:last-child .info-value {
+  color: var(--text-secondary);
+}
+
+.user-info-card:hover {
+  box-shadow:
+    0 0 25px rgba(139, 92, 246, 0.12);
+
+  transition: var(--transition);
+}

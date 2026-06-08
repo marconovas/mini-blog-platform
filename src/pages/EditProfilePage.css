@@ -1,0 +1,125 @@
+.edit-profile-page {
+  min-height: 100vh;
+
+  background: var(--bg-dark);
+}
+
+/******** FORM ********/
+
+.edit-profile-form {
+  max-width: 800px;
+
+  margin: 0 auto 4rem auto;
+
+  padding: 2rem;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.5rem;
+}
+
+/******** GROUP ********/
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.75rem;
+}
+
+.form-group label {
+  color: var(--text-main);
+
+  font-weight: 600;
+
+  font-size: 0.95rem;
+}
+
+/******** TEXTAREA ********/
+
+.form-group textarea {
+  min-height: 180px;
+
+  resize: vertical;
+
+  padding: 1rem;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.03);
+
+  color: var(--text-main);
+
+  outline: none;
+
+  transition: var(--transition);
+
+  line-height: 1.7;
+}
+
+.form-group textarea::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.form-group textarea:focus {
+  border-color: rgba(108,99,255,0.45);
+
+  box-shadow:
+    0 0 0 4px rgba(108,99,255,0.08);
+}
+
+/******** BUTTON ********/
+
+.save-profile-btn {
+  align-self: flex-start;
+
+  padding: 0.9rem 1.5rem;
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  background: var(--primary);
+
+  color: var(--text-main);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 0 18px rgba(108,99,255,0.18);
+}
+
+.save-profile-btn:hover {
+  background: var(--primary-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 24px rgba(108,99,255,0.28);
+}
+
+.bio-counter {
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+
+  text-align: right;
+}

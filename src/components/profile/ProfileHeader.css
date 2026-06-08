@@ -1,0 +1,180 @@
+.profile-header {
+  max-width: 900px;
+
+  margin: 7rem auto 2rem auto;
+
+  padding: 3rem 2rem;
+
+  text-align: center;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(17, 24, 39, 0.95),
+    rgba(7, 11, 20, 0.98)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 30px rgba(139, 92, 246, 0.08);
+}
+
+/******** AVATAR ********/
+
+.profile-header .user-avatar {
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 1.5rem auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(108, 99, 255, 0.15);
+
+  color: var(--primary);
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+/******** NAME ********/
+
+.profile-header h1 {
+  color: var(--text-main);
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  font-weight: 800;
+
+  margin-bottom: 0.8rem;
+}
+
+/******** DATE ********/
+
+.profile-date {
+  color: var(--text-secondary);
+
+  margin-bottom: 2rem;
+
+  font-size: 0.95rem;
+}
+
+/******** DIVIDER ********/
+
+.profile-divider {
+  width: 100%;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  margin: 2rem 0;
+}
+
+/******** STATS ********/
+
+.profile-stats {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 4rem;
+
+  margin-bottom: 2rem;
+}
+
+.stat-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.4rem;
+}
+
+.stat-item strong {
+  color: var(--text-main);
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+}
+
+.stat-item span {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+/******** BUTTON ********/
+
+.edit-profile-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0.85rem 1.5rem;
+
+  border-radius: var(--radius-md);
+
+  text-decoration: none;
+
+  background: var(--primary);
+
+  color: var(--text-main);
+
+  font-weight: 600;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 0 16px rgba(108, 99, 255, 0.18);
+}
+
+.edit-profile-btn:hover {
+  background: var(--primary-hover);
+
+  color: var(--text-main);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 24px rgba(108, 99, 255, 0.3);
+}
+
+/******** MOBILE ********/
+
+@media (max-width: 768px) {
+
+  .profile-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .profile-stats {
+    gap: 2rem;
+  }
+
+  .profile-header .user-avatar {
+    width: 75px;
+    height: 75px;
+
+    font-size: 1.6rem;
+  }
+
+}
