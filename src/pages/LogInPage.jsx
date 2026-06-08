@@ -27,9 +27,11 @@ export default function LogInPage() {
 
         try{
             
-            const data = await userLogIn(email, password);
+            const data = await userLogIn(email, password);            
 
-            login(data.token);
+            console.log(data);
+
+            login(data.token, data.user); //CHECK THIS
 
             toast.success("Login Successful!",{
                 position: "top-right",

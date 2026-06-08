@@ -24,9 +24,25 @@ export default function RegisterPage() {
         setIsLoading(true);
 
         try{
+
+            console.log("BEFORE USER REGISTER:" ,{
+                name,
+                email,
+                password
+            });
+
             const res = await userRegister(name, email, password);
 
+            
+            console.log("AFTER USER REGISTER:" ,{
+                name,
+                email,
+                password
+            });
+
             console.log(res);
+
+
             
             toast.success("Account created Succesfully!",{
                 position: "top-right",
@@ -39,7 +55,7 @@ export default function RegisterPage() {
                 theme: "dark",
             });
 
-            redirect("/login");
+            redirect("/auth/login");
             
         } catch(error) {
 

@@ -2,14 +2,15 @@ import {
   Button,
   Container,
   Nav,
-  Navbar
+  Navbar,
+  NavDropdown
 } from "react-bootstrap";
 import "./Navigation.css";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../context/useAuth";
 
 export default function Navigation() {
-  const { token, logout } = useAuth();
+  const { token, user, logout } = useAuth();
   
   const navigate = useNavigate();
   const isAuth = !!token;
@@ -18,6 +19,9 @@ export default function Navigation() {
     logout();
     navigate("/auth/login");
   }
+
+  console.log("TOKEN:", token);
+  console.log("USER:", user);
 
   return (
     <Navbar
@@ -49,23 +53,42 @@ export default function Navigation() {
             </Nav.Link>
           </Nav>
 
-          {isAuth ? (
-            <div className="d-flex gap-2">
-              <Button
+          {isAuth && user ? (
+            <NavDropdown
+              title={
+                <span className="user-dropdown-title">
+                  <span className="user-avatar">
+                    {user.name.charAt(0).toUpperCase()}
+                  </span>
+
+                  {user.name}
+                </span>
+              }
+              align="end"
+              className="user-dropdown"
+            >
+
+              <NavDropdown.Item disabled>
+                Signed in as {user.name}
+              </NavDropdown.Item>
+              
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item
                 as={Link}
                 to={"/posts/create"}
-                className="hero-btn"
               >
-                New Post
-              </Button>
+                Create Post
+              </NavDropdown.Item>
 
-              <Button
+              <NavDropdown.Item
+                className="logout-item"
                 onClick={handleLogout}
-                variant="outline-light"
               >
                 Logout
-              </Button>
-            </div>
+              </NavDropdown.Item>
+
+            </NavDropdown>
           ) : (
             <div className="d-flex gap-2">
               <Button 
