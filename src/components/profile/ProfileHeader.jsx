@@ -18,7 +18,7 @@ export default function ProfileHeader({
 
         <h1>
             {user.name}
-        </h1>
+        </h1>        
 
         <p className="profile-date">
             Joined {
@@ -48,9 +48,8 @@ export default function ProfileHeader({
 
         </div>
 
-        {/* EDIT PROFILE PAGE AND ACTION MISSING! */}
         {isOwner && (
-            <Link to={`${user.id}/edit`}>
+            <Link to={`/user/${user.id}/edit`}>
                 Edit Profile
             </Link>
         )}
