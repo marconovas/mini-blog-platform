@@ -70,9 +70,13 @@ export async function editPost(id, title, content, token) {
     return data;
 }
 
-export async function deletePost(id) {
+export async function deletePost(id, token) {
     const res = await fetch(`${API_URL}/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: {
+            "Content-type":"Application-json",
+            Authorization: `Bearer ${token}`
+        }
     })
 
     const data = await res.json();

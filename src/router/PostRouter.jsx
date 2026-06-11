@@ -10,13 +10,13 @@ import ProtectedRoute from "./ProtectedRoute.jsx";
 function PostRouter () {
     return(
         <Routes>
-            <Route path="/" element={<HomePage />}/>
-            <Route path="/posts" element={<AllPostsPage />}/>
-            <Route path="/posts/:id" element={<PostDetailPage />}/>
+            <Route index element={<HomePage />}/>
+            <Route path="posts" element={<AllPostsPage />}/>
+            <Route path="posts/:id" element={<PostDetailPage />}/>
 
             {/* PROTECTED ROUTES */}
             <Route 
-                path="/posts/create" 
+                path="posts/create" 
                 element={
                     <ProtectedRoute>
                         <CreatePostPage />
@@ -24,7 +24,7 @@ function PostRouter () {
                 }
             />
             <Route 
-                path="/posts/:id/modify"
+                path="posts/:id/modify"
                 element={
                     <ProtectedRoute>
                         <EditPostPage/>

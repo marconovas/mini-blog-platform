@@ -1,18 +1,27 @@
 import { useEffect, useState } from "react"
-import { getPostById } from "../services/posts.service.js"
-import { useParams } from "react-router-dom";
+import { deletePost, getPostById } from "../services/posts.service.js"
+import { useNavigate, useParams } from "react-router-dom";
 
 import Navigation from "../components/layout/Navigation.jsx";
 import Footer from "../components/layout/Footer.jsx";
 import LoadingSpinner from "../components/ui/LoadingSpinner.jsx";
 import PostDetail from "../components/posts/PostDetail.jsx";
 import CommentsSection from "../components/comments/CommentsSection.jsx";
+import useAuth from "../context/useAuth.js";
+import { usePosts } from "../context/PostContext.jsx";
 
 export default function PostDetailPage() {
     const [post, setPost] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     const { id } = useParams();
+    const { user, token } = useAuth();
+    const { removePost } = usePosts();
+
+    const navigate = useNavigate();
+    
+    //CHECK OWNERSHIP
+    const isOwner = post?.user?.id === user?.id;
 
     //FETCH POST
     useEffect(() => {
@@ -24,7 +33,7 @@ export default function PostDetailPage() {
                 const data = await getPostById(id);
                 
                 setPost(data.post);
-
+                
             } catch(error) {
                 
                 console.log(error);
@@ -33,10 +42,33 @@ export default function PostDetailPage() {
                 setIsLoading(false);
             }
         }
-
+        
         fetchPostById();
-
+        
     }, [id]);
+
+    async function handleDelete() {
+
+        console.log("DELETE ID:", id);
+
+        const confirmed = window.confirm(
+            "Are you sure you want to delete the post?"
+        );
+
+        if(!confirmed) return;
+
+        try{
+            await deletePost(id, token);
+
+            removePost(Number(id));
+
+            navigate("/posts");
+
+        } catch(error) {
+            console.error(error);
+        }
+    }
+
     
     if(isLoading) {
         return <LoadingSpinner />
@@ -103,7 +135,7 @@ export default function PostDetailPage() {
         <>
             <Navigation />
             
-            <PostDetail post={post} />
+            <PostDetail post={post} isOwner={isOwner} handleDelete={handleDelete}/>
 
             <CommentsSection comments={post.comments} />
             

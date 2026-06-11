@@ -23,8 +23,6 @@ export default function ProfilePage() {
         async function userProfile() {
             const data = await getUserById(id);
 
-            //console.log("DATA USER :", data);
-
             setUserProfile(data.user);
             setloading(false);
         }

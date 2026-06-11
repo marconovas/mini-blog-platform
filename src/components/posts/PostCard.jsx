@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./PostCard.css";
 
 export default function PostCard({ post }) {
+
   return (
     <article className="post-card">
 

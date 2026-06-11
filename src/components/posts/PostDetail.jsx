@@ -1,6 +1,6 @@
 import "./PostDetail.css";
 
-export default function PostDetail({ post }) {
+export default function PostDetail({ post, isOwner, handleDelete }) {
 
     return (
         <section className="post-detail">
@@ -22,6 +22,17 @@ export default function PostDetail({ post }) {
             <div className="post-meta">
                 <span>{new Date(post.updatedAt).toLocaleDateString()}</span>
             </div>
+
+            {isOwner && (
+                <div className="post-actions">
+                    <button
+                        className="hero-btn delete-btn"
+                        onClick={handleDelete}
+                    >
+                        Delete Post
+                    </button>
+                </div>
+            )}
 
             <article className="post-content">
                 <p>{post.content}</p>
