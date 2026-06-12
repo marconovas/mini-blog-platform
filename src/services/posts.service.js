@@ -100,3 +100,25 @@ export async function commentsByPost(id) {
 
     return data;
 }
+
+//POST A COMMENT
+export async function postComment(postId, content, token) {
+    const res = await fetch(`${API_URL}/${postId}/comments`,{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+            content
+        })
+    });
+
+    const data = await res.json();
+
+    if(!res.ok){
+        throw new Error(data.message)
+    }
+
+    return data;
+}
