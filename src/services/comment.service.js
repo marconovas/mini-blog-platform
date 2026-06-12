@@ -10,3 +10,22 @@ export async function getComments() {
 
     return res.json();
 }
+
+
+export async function deleteComment(id, token) {
+    const res = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type" : "application/json",
+            Authorization: `Bearer ${token}` 
+        }
+    });
+
+    const data = await res.json;
+
+    if(!res.ok){
+        throw new Error(data.message);
+    }
+
+    return data;
+}

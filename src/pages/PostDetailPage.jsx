@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { deletePost, getPostById } from "../services/posts.service.js"
-import { useNavigate, useParams } from "react-router-dom";
+import { deletePost, getPostById, postComment } from "../services/posts.service.js"
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import Navigation from "../components/layout/Navigation.jsx";
 import Footer from "../components/layout/Footer.jsx";
@@ -9,10 +9,16 @@ import PostDetail from "../components/posts/PostDetail.jsx";
 import CommentsSection from "../components/comments/CommentsSection.jsx";
 import useAuth from "../context/useAuth.js";
 import { usePosts } from "../context/PostContext.jsx";
+import CommentForm from "../components/comments/CommentForm.jsx";
+
+//STYLES
+import "./PostDetailPage.css";
 
 export default function PostDetailPage() {
     const [post, setPost] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    //COMMENT
+    const [comment, setComment] = useState("");
 
     const { id } = useParams();
     const { user, token } = useAuth();
@@ -68,6 +74,22 @@ export default function PostDetailPage() {
             console.error(error);
         }
     }
+
+    async function handleComment(e) {
+        e.preventDefault();
+
+        try{
+            await postComment(id, comment, token);
+
+            const data = await getPostById(id);
+
+            setPost(data.post);
+
+            setComment("");
+        } catch(error) {
+            console.error(error);
+        }
+    } 
 
     
     if(isLoading) {
@@ -134,11 +156,41 @@ export default function PostDetailPage() {
     return(
         <>
             <Navigation />
-            
-            <PostDetail post={post} isOwner={isOwner} handleDelete={handleDelete}/>
 
-            <CommentsSection comments={post.comments} />
-            
+            <main className="post-detail-page">
+
+                <PostDetail
+                    post={post}
+                    isOwner={isOwner}
+                    handleDelete={handleDelete}
+                />
+
+                <CommentsSection
+                    comments={post.comments}
+                />
+
+                <section className="comment-form-section">
+
+                    <h2>
+                        Leave a Comment
+                    </h2>
+
+                    {user ? (
+                        <CommentForm
+                            comment={comment}
+                            setComment={setComment}
+                            handleComment={handleComment}
+                        />
+                    ) : (
+                        <p className="login-required">
+                            You must <Link to="/auth/login">log in</Link> to post a comment.
+                        </p>
+                    )}
+
+                </section>
+
+            </main>
+
             <Footer />
         </>
     )

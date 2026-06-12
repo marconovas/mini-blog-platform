@@ -1,12 +1,25 @@
 import "./CommentCard.css";
 
-export default function CommentCard({ comment }) {
+export default function CommentCard({ 
+    comment, 
+    canDelete = false,
+    handleDeleteComment 
+}) {
     
     return(
         <article className="comment-card">
 
             <div className="comment-header">
-                <h4>{comment.user.name}</h4>
+
+                {canDelete ? (
+                    <h4>
+                        Comment on: {comment.post?.title}
+                    </h4>
+                ) : (
+                    <h4>
+                        {comment.user?.name}
+                    </h4>
+                )}
 
                 <span>
                     {new Date(comment.createdAt).toLocaleDateString()}
@@ -17,6 +30,15 @@ export default function CommentCard({ comment }) {
             <p className="comment-content">
                 {comment.content}
             </p>
+            
+            {canDelete && (
+                <button
+                    className="delete-comment-btn"
+                    onClick={() => handleDeleteComment(comment.id)}
+                >
+                    Delete Comment
+                </button>
+            )}
 
         </article>
     );

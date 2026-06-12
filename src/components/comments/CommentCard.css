@@ -50,3 +50,25 @@
 
   font-size: 0.97rem;
 }
+
+.delete-comment-btn {
+  margin-top: 1rem;
+
+  background: transparent;
+
+  border: none;
+
+  color: #ff8a8a;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.delete-comment-btn:hover {
+  color: #ffb3b3;
+}

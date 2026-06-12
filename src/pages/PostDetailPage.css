@@ -1,0 +1,57 @@
+.comment-form-section {
+  max-width: 900px;
+
+  margin: 3rem auto;
+
+  padding: 2rem;
+
+  background: var(--bg-secondary);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.08);
+}
+
+.comment-form-section h2 {
+  color: var(--text-main);
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+  margin-bottom: 1.5rem;
+}
+
+.login-required {
+  margin: 0;
+
+  padding: 1rem 1.25rem;
+
+  border-radius: var(--radius-md);
+
+  background: rgba(108, 99, 255, 0.08);
+
+  border: 1px solid rgba(108, 99, 255, 0.2);
+
+  color: var(--text-main);
+
+  text-align: center;
+
+  font-weight: 500;
+}
+
+.login-required a {
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.login-required a:hover {
+  color: var(--primary-hover);
+}
+
