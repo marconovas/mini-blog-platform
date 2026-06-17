@@ -136,9 +136,7 @@ npm run dev
 
 # Future Improvements
 
-- Comments system
 - Likes system
-- User profile page
 - Search functionality
 - Pagination
 - Image uploads
