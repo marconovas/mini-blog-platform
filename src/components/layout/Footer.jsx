@@ -6,7 +6,7 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer-content">
                 <div className="footer-brand">
-                    <h2>DevBlog</h2>
+                    <h2>Api-Blog</h2>
 
                     <p>
                         Share ideas, code and inspiration
@@ -23,7 +23,7 @@ export default function Footer() {
             </div>
 
             <div className="footer-bottom">
-                <p>© 2026 DevBlog. Marco Novas Medina. All rights reserved.</p>
+                <p>© 2026 Api-Blog. Marco Novas Medina. All rights reserved.</p>
             </div>
         </footer>
     )

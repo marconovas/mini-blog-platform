@@ -6,6 +6,7 @@ import PostDetailPage from "../pages/PostDetailPage.jsx";
 import CreatePostPage from "../pages/CreatePostPage.jsx";
 import EditPostPage from "../pages/EditPostPage.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
+import AboutPage from "../pages/AboutPage.jsx";
 
 function PostRouter () {
     return(
@@ -13,6 +14,8 @@ function PostRouter () {
             <Route index element={<HomePage />}/>
             <Route path="posts" element={<AllPostsPage />}/>
             <Route path="posts/:id" element={<PostDetailPage />}/>
+            
+            <Route path="/about" element={<AboutPage />}/>
 
             {/* PROTECTED ROUTES */}
             <Route 
