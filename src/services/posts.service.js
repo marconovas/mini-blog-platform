@@ -1,6 +1,7 @@
 import { authFetch } from "../utils/authFetch";
 
-const API_URL = "http://localhost:3000/posts";
+
+const API_URL = `${import.meta.env.VITE_API_URL}/posts`;
 
 
 export async function getPosts() {
@@ -31,6 +32,9 @@ export async function createPost(title, content) {
 
     const res = await authFetch(API_URL,{
         method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             title,
             content
@@ -49,6 +53,9 @@ export async function createPost(title, content) {
 export async function editPost(id, title, content) {
     const res  = await authFetch(`${API_URL}/${id}`,{
         method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             title,
             content
@@ -95,6 +102,9 @@ export async function commentsByPost(id) {
 export async function postComment(postId, content) {
     const res = await authFetch(`${API_URL}/${postId}/comments`,{
         method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
             content
         })

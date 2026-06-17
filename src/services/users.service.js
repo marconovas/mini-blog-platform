@@ -1,6 +1,7 @@
 import { authFetch } from "../utils/authFetch";
 
-const API_URL = "http://localhost:3000"
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getUserById(id) {
     const response = await fetch(`${API_URL}/users/${id}`)
@@ -18,6 +19,9 @@ export async function getUserById(id) {
 export async function updateUser(id, data) {
     const response = await authFetch(`${API_URL}/users/${id}`, {
         method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify(data)
     });
 

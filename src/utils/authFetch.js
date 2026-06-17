@@ -11,7 +11,7 @@ export async function authFetch(url, options = {}) {
         }
     });
 
-    if(res.status === 401 || res.stats === 403){
+    if(res.status === 401 || res.status === 403){
 
         localStorage.removeItem("token");
         localStorage.removeItem("user");
