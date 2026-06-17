@@ -3,6 +3,14 @@
 A full stack blog platform built with React, Node.js, Express, Prisma and PostgreSQL.
 
 ---
+## Demo
+
+Frontend:
+[https://tu-frontend.vercel.app](https://mini-blog-platform-tau.vercel.app/)
+
+Backend API:
+[https://mini-blog-api-j5kh.onrender.com](https://mini-blog-api-j5kh.onrender.com/)
+
 
 # Features
 
