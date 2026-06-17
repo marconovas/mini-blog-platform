@@ -1,3 +1,4 @@
+import { authFetch } from "../utils/authFetch";
 
 const API_URL = "http://localhost:3000/comments"
 
@@ -12,13 +13,9 @@ export async function getComments() {
 }
 
 
-export async function deleteComment(id, token) {
-    const res = await fetch(`${API_URL}/${id}`, {
-        method: "DELETE",
-        headers: {
-            "Content-Type" : "application/json",
-            Authorization: `Bearer ${token}` 
-        }
+export async function deleteComment(id) {
+    const res = await authFetch(`${API_URL}/${id}`, {
+        method: "DELETE"
     });
 
     const data = await res.json;

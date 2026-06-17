@@ -1,3 +1,5 @@
+import { authFetch } from "../utils/authFetch";
+
 const API_URL = "http://localhost:3000/posts";
 
 
@@ -25,14 +27,10 @@ export async function getPostById (id) {
     return data;
 }
 
-export async function createPost(title, content, token) {
+export async function createPost(title, content) {
 
-    const res = await fetch(API_URL,{
+    const res = await authFetch(API_URL,{
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        },
         body: JSON.stringify({
             title,
             content
@@ -48,13 +46,9 @@ export async function createPost(title, content, token) {
     return data;
 }
 
-export async function editPost(id, title, content, token) {
-    const res  = await fetch(`${API_URL}/${id}`,{
+export async function editPost(id, title, content) {
+    const res  = await authFetch(`${API_URL}/${id}`,{
         method: "PUT",
-        headers: {
-            "Content-Type" : "application/json",
-            Authorization: `Bearer ${token}`
-        },
         body: JSON.stringify({
             title,
             content
@@ -70,14 +64,10 @@ export async function editPost(id, title, content, token) {
     return data;
 }
 
-export async function deletePost(id, token) {
-    const res = await fetch(`${API_URL}/${id}`, {
-        method: "DELETE",
-        headers: {
-            "Content-type":"Application-json",
-            Authorization: `Bearer ${token}`
-        }
-    })
+export async function deletePost(id) {
+    const res = await authFetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+    });
 
     const data = await res.json();
 
@@ -102,13 +92,9 @@ export async function commentsByPost(id) {
 }
 
 //POST A COMMENT
-export async function postComment(postId, content, token) {
-    const res = await fetch(`${API_URL}/${postId}/comments`,{
+export async function postComment(postId, content) {
+    const res = await authFetch(`${API_URL}/${postId}/comments`,{
         method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        },
         body: JSON.stringify({
             content
         })
