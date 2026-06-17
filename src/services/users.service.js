@@ -1,3 +1,5 @@
+import { authFetch } from "../utils/authFetch";
+
 const API_URL = "http://localhost:3000"
 
 export async function getUserById(id) {
@@ -13,13 +15,9 @@ export async function getUserById(id) {
 }
 
 //UPDATE
-export async function updateUser(id, data, token) {
-    const response = await fetch(`${API_URL}/users/${id}`, {
+export async function updateUser(id, data) {
+    const response = await authFetch(`${API_URL}/users/${id}`, {
         method: "PATCH",
-        headers: {
-            "Content-Type" : "application/json",
-            Authorization: `Bearer ${token}`
-        },
         body: JSON.stringify(data)
     });
 
