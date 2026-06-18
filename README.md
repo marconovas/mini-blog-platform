@@ -148,13 +148,17 @@ npm run dev
 - Search functionality
 - Pagination
 - Image uploads
-- Deployment
 
 ---
 
 # Screenshots
 
-_To be added..._
+<img width="1861" height="914" alt="Captura de pantalla 2026-06-18 005616" src="https://github.com/user-attachments/assets/9ed4f27b-fbb6-4045-9e54-da06126b2002" />
+<img width="1560" height="911" alt="Captura de pantalla 2026-06-18 005839" src="https://github.com/user-attachments/assets/fc99a9d1-d259-410c-a1fd-cdcfa32f6ba7" />
+<img width="1867" height="911" alt="Captura de pantalla 2026-06-18 005738" src="https://github.com/user-attachments/assets/946bc1b1-b423-4e35-bd30-06d4f833df90" />
+<img width="1857" height="910" alt="Captura de pantalla 2026-06-18 005652" src="https://github.com/user-attachments/assets/27fc3196-22f3-4bc9-838b-be772566e323" />
+
+
 ---
 
 # Environment Variables
